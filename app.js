@@ -8,6 +8,30 @@ const equalBtn = document.querySelector("#equal-btn");
 const display = document.querySelector(".display");
 
 
+//operate
+
+function operate(operator, fnum, snum) {
+    switch(operator) {
+        case "+":
+            add(fnum, snum);
+            break;
+        case "-":
+            subtract(fnum, snum);
+            break;
+        case "/":
+            division(fnum, snum);
+            break;
+        case "*":
+            mul(fnum, snum);
+            break;
+        default:
+            break;
+            
+    }
+}
+
+
+
 
 function add(fnum, snum){
     return fnum + snum;
