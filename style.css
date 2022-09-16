@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px;
+    padding: 50px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 350px;
+    flex-wrap: wrap;
+    border: solid burlywood;
+    border-radius: 10px;
+}
+
+
+.display {
+    height: 50px;
+    background-color: grey;
+    text-align: right;
+    padding: 12px;
+}
+
+
+
+.deletion {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.btn {
+    flex: 1 0 50%;
+    height: 40px;
+}
+
+
+
+.btn-elements {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.btn-child {
+    flex: 1 0 15%;
+    margin: 5px;
+    height: 50px;
+}
