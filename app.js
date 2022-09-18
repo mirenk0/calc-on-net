@@ -1,3 +1,11 @@
+//We get all the buttons
+//We listen for an click event to happen to any of them to get their value 
+//Then we display the value in our display 
+//If we've clicked a specific operator activate the operate function to it when = is clicked
+//Results are returned as the first operand now
+//Need to add the new operator and the second operand
+//Keep repeating
+
 const clearContent = document.querySelector(".clear");
 const deleteContent = document.querySelector(".delete");
 
@@ -11,12 +19,10 @@ display.innerHTML = null;
 const operands = Array.from(numberBtn);
 const operators = Array.from(operatorBtn);
 
-//We get all the buttons
-//We listen for an click event to happen to any of them to get their value 
-//Then we display the value in our display 
-//If we've clicked a specific operator activate the operate function to it when = is clicked
-//Results are returned as the first operand now
-//Need to add the new operator and the second operand
+let firstOperand = 0;
+let operatorStored = "";
+let secondOperand = 0;
+let result = 0;
 
 
 //Pressing keyboard keys
@@ -29,25 +35,45 @@ window.addEventListener("keydown", (e) => {
 
 const operatorAction = operators.forEach(operator => {
     operator.addEventListener("click", () => {
-        return operator.innerHTML;
+        display.textContent = "";
+        operatorStored = operator.textContent;
+        return operatorStored;
     })
 });
+
+operatorStored = operatorAction;
+
 
 const operandsAction = operands.forEach(operand => {
     operand.addEventListener("click", () => {
-        return operand.innerHTML;
+        firstOperand = operand.textContent;
+        return firstOperand;
     })
 });
 
+firstOperand = operandsAction;
+
+
+const secondOperandAction = operands.forEach(operand => {
+    operand.addEventListener("click", ()=>{
+        secondOperand = display.textContent;
+        return secondOperand;
+    })
+})
+
+secondOperand = secondOperandAction;
+
 
 const results = equalBtn.addEventListener("click", () => {
-    return operate(operatorAction, operandsAction, operandsAction);
+    result = operate(operatorStored, firstOperand, secondOperand);
+    display.textContent = result;
+    return result;
 });
 
 
 //Display with onclick
 function displayChange(ele){
-    display.innerHTML += ele.innerHTML;
+    display.textContent += ele.textContent;
 }
 
 
@@ -64,7 +90,7 @@ function operate(operator, fnum, snum) {
         case "/":
             division(fnum, snum);
             break;
-        case "*":
+        case "x":
             mul(fnum, snum);
             break;
         default:
