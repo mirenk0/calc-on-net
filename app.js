@@ -6,6 +6,17 @@
 //Need to add the new operator and the second operand
 //Keep repeating
 
+
+// 1. I press the 5 button, 5 appears on the display
+// 2. I then press the multiply operator, 5 disappears, 5 becomes our first operand
+// 3. I then press the 6 button, 6 appears on the display
+// 4. I then press the equals button, 6 disappears, 6 becomes our second operand
+// 5. We use the operate function, with whatever one of our operations we clicked as the first argument, with firstOperand and secondOperand as the other arguments
+// 6. We then display the result of operate on the screen 
+// With that pseudocode and the variables you have setup, you should be able to get the calculator working
+// At least for the first calculation
+// For long sets of calculations, you'll need to also use the operate function whenever one of the operators is clicked
+
 const clearContent = document.querySelector(".clear");
 const deleteContent = document.querySelector(".delete");
 
@@ -28,46 +39,44 @@ let result = 0;
 //Pressing keyboard keys
 window.addEventListener("keydown", (e) => {
     if(e.key >= 48 && e.key <= 57){
-        display.innerHTML = e;
+        display.textContent = e;
     }
 });
 
 
 const operatorAction = operators.forEach(operator => {
     operator.addEventListener("click", () => {
+        firstOperand = Number(display.textContent);
         display.textContent = "";
         operatorStored = operator.textContent;
-        return operatorStored;
     })
 });
 
-operatorStored = operatorAction;
+
+// //Get first operand
+// const operandsAction = operands.forEach(operand => {
+//     operand.addEventListener("click", () => {
+//         firstOperand = display.textContent;
+//     })
+// });
 
 
-const operandsAction = operands.forEach(operand => {
-    operand.addEventListener("click", () => {
-        firstOperand = operand.textContent;
-        return firstOperand;
-    })
-});
+// //Get second operand
+// const secondOperandAction = operands.forEach(operand => {
+//     operand.addEventListener("click", ()=>{
+//         secondOperand = display.textContent;
+//     })
+// })
 
-firstOperand = operandsAction;
-
-
-const secondOperandAction = operands.forEach(operand => {
-    operand.addEventListener("click", ()=>{
-        secondOperand = display.textContent;
-        return secondOperand;
-    })
-})
-
-secondOperand = secondOperandAction;
 
 
 const results = equalBtn.addEventListener("click", () => {
+    secondOperand = Number(display.textContent);
+    display.textContent = "";
     result = operate(operatorStored, firstOperand, secondOperand);
     display.textContent = result;
-    return result;
+    //result gets displayed as the first operand after calc
+    // firstOperand = result;
 });
 
 
@@ -101,7 +110,6 @@ function operate(operator, fnum, snum) {
 
 
 //Functions
-
 
 function clear() {
     display.innerHTML = null;
