@@ -91,20 +91,19 @@ function displayChange(ele){
 function operate(operator, fnum, snum) {
     switch(operator) {
         case "+":
-            add(fnum, snum);
+            return add(fnum, snum);
             break;
         case "-":
-            subtract(fnum, snum);
+            return subtract(fnum, snum);
             break;
         case "/":
-            division(fnum, snum);
+            return division(fnum, snum);
             break;
         case "x":
-            mul(fnum, snum);
+            return mul(fnum, snum);
             break;
         default:
             break;
-            
     }
 }
 
