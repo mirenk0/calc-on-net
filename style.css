@@ -47,11 +47,21 @@ body {
     height: 40px;
 }
 
+[data-operator] {
+    background-color: rgb(167, 96, 49);
+    font-weight: bold;
+    font-size: larger;
+}
+
 .delete {
     background-color: rgb(117, 50, 67);
     color: aliceblue;
 }
 
+#equal-btn {
+    background-color: rgb(106, 148, 43);
+    font-size: larger;
+}
 
 
 .btn-elements {

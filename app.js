@@ -60,7 +60,6 @@ const results = equalBtn.addEventListener("click", () => {
     result = operate(operatorStored, firstOperand, secondOperand);
     display.textContent = result;
     //result gets displayed as the first operand after calc
-    // firstOperand = result;
 });
 
 
