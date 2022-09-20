@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(17, 18, 29) !important;
+    background-color: rgb(14, 14, 23) !important;
 }
 
 
@@ -17,16 +17,18 @@ body {
     padding: 10px;
     width: 350px;
     flex-wrap: wrap;
-    border: solid burlywood;
+    border: solid rgb(116, 79, 32);
     border-radius: 10px;
 }
 
 
 .display {
     height: 50px;
-    background-color: grey;
+    background-color: rgb(96, 104, 108);
     text-align: right;
     padding: 12px;
+    color: rgb(64, 216, 153);
+    font-weight: 700;
 }
 
 
@@ -43,6 +45,11 @@ body {
 .btn {
     flex: 1 0 50%;
     height: 40px;
+}
+
+.delete {
+    background-color: rgb(117, 50, 67);
+    color: aliceblue;
 }
 
 

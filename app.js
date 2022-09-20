@@ -33,13 +33,13 @@ const operators = Array.from(operatorBtn);
 let firstOperand = 0;
 let operatorStored = "";
 let secondOperand = 0;
-let result = 0;
+let result = 0;     
 
 
 //Pressing keyboard keys
 window.addEventListener("keydown", (e) => {
-    if(e.key >= 48 && e.key <= 57){
-        display.textContent = e;
+    if((e.key >= 0 && e.key <= 9) || e.key === "."){
+        display.textContent += e.key;
     }
 });
 
@@ -51,22 +51,6 @@ const operatorAction = operators.forEach(operator => {
         operatorStored = operator.textContent;
     })
 });
-
-
-// //Get first operand
-// const operandsAction = operands.forEach(operand => {
-//     operand.addEventListener("click", () => {
-//         firstOperand = display.textContent;
-//     })
-// });
-
-
-// //Get second operand
-// const secondOperandAction = operands.forEach(operand => {
-//     operand.addEventListener("click", ()=>{
-//         secondOperand = display.textContent;
-//     })
-// })
 
 
 
@@ -113,7 +97,14 @@ clearContent.addEventListener("click", () => {
     clear();
 });
 
+
 //Delete
+window.addEventListener("keydown", (e) => {
+    if(e.key === "Backspace"){
+        deletion();
+    }
+});
+
 deleteContent.addEventListener("click", () => {
     deletion();
 });
