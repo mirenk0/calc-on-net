@@ -108,6 +108,17 @@ function operate(operator, fnum, snum) {
 }
 
 
+//Clear
+clearContent.addEventListener("click", () => {
+    clear();
+});
+
+//Delete
+deleteContent.addEventListener("click", () => {
+    deletion();
+});
+
+
 //Functions
 
 function clear() {
@@ -115,7 +126,7 @@ function clear() {
 }
 
 function deletion() {
-
+    display.textContent = display.textContent.substring(0, display.textContent.length - 1);
 }
 
 function add(fnum, snum){
