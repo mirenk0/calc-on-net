@@ -23,7 +23,7 @@ body {
 
 
 .display {
-    height: 50px;
+    height: 25px;
     background-color: rgb(96, 104, 108);
     text-align: right;
     padding: 12px;
@@ -31,6 +31,14 @@ body {
     font-weight: 700;
 }
 
+.sub-display {
+    height: 8px;
+    background-color: rgb(96, 104, 108);
+    text-align: right;
+    padding: 12px;
+    color: rgb(64, 198, 216);
+    font-weight: 700;
+}
 
 
 .deletion {

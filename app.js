@@ -16,6 +16,7 @@ const operatorBtn = document.querySelectorAll("[data-operator]");
 const pointBtn = document.querySelector("#point-btn");
 const equalBtn = document.querySelector("#equal-btn");
 const display = document.querySelector(".display");
+const subDisplay = document.querySelector(".sub-display");
 display.innerHTML = null;
 
 const operands = Array.from(numberBtn);
@@ -38,6 +39,7 @@ window.addEventListener("keydown", (e) => {
 const operatorAction = operators.forEach(operator => {
     operator.addEventListener("click", () => {
         firstOperand = Number(display.textContent);
+        subDisplay.textContent = firstOperand + " " + operator.textContent;
         display.textContent = "";
         operatorStored = operator.textContent;
     })
@@ -61,6 +63,7 @@ const operatorAction = operators.forEach(operator => {
 
 const results = equalBtn.addEventListener("click", () => {
     secondOperand = Number(display.textContent);
+    subDisplay.textContent += " " + secondOperand;
     display.textContent = "";
     result = operate(operatorStored, firstOperand, secondOperand);
     display.textContent = result;
@@ -118,6 +121,7 @@ deleteContent.addEventListener("click", () => {
 
 function clear() {
     display.innerHTML = null;
+    subDisplay.innerHTML = null;
 }
 
 function deletion() {
