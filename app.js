@@ -1,12 +1,3 @@
-//We get all the buttons
-//We listen for an click event to happen to any of them to get their value 
-//Then we display the value in our display 
-//If we've clicked a specific operator activate the operate function to it when = is clicked
-//Results are returned as the first operand now
-//Need to add the new operator and the second operand
-//Keep repeating
-
-
 // 1. I press the 5 button, 5 appears on the display
 // 2. I then press the multiply operator, 5 disappears, 5 becomes our first operand
 // 3. I then press the 6 button, 6 appears on the display
@@ -52,6 +43,20 @@ const operatorAction = operators.forEach(operator => {
     })
 });
 
+
+// Equal Result
+
+//Enter method has problems since if you mix clicks with taps you have to change the time of reset
+//So it does not stay clicked and operate
+// window.addEventListener("keydown", (e) => {
+//     if(e.key === "Enter"){
+//         secondOperand = Number(display.textContent);
+//         display.textContent = "";
+//         result = operate(operatorStored, firstOperand, secondOperand);
+//         display.textContent = result;
+//         //result gets displayed as the first operand after calc
+//     }
+// });
 
 
 const results = equalBtn.addEventListener("click", () => {
