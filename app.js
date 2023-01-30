@@ -1,13 +1,3 @@
-// 1. I press the 5 button, 5 appears on the display
-// 2. I then press the multiply operator, 5 disappears, 5 becomes our first operand
-// 3. I then press the 6 button, 6 appears on the display
-// 4. I then press the equals button, 6 disappears, 6 becomes our second operand
-// 5. We use the operate function, with whatever one of our operations we clicked as the first argument, with firstOperand and secondOperand as the other arguments
-// 6. We then display the result of operate on the screen 
-// With that pseudocode and the variables you have setup, you should be able to get the calculator working
-// At least for the first calculation
-// For long sets of calculations, you'll need to also use the operate function whenever one of the operators is clicked
-
 const clearContent = document.querySelector(".clear");
 const deleteContent = document.querySelector(".delete");
 
